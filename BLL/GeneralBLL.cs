@@ -11,6 +11,7 @@ namespace BLL
     public class GeneralBLL
     {
         GeneralDAO dao = new GeneralDAO();
+        AdsDAO adsdao = new AdsDAO();
         public GeneralDTO GetAllPosts()
         {
             GeneralDTO dto = new GeneralDTO();
@@ -19,6 +20,7 @@ namespace BLL
             dto.PopularPost = dao.GetPopularPost();
             dto.MostViewedPost = dao.GetMostViewedPost();
             dto.Videos = dao.GetVideos();
+            dto.Adslist = adsdao.GetAds();
             return dto;
         }
     }
