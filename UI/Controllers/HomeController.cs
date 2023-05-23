@@ -22,5 +22,21 @@ namespace UI.Controllers
             dto = bll.GetAllPosts();
             return View(dto);
         }
+
+        public ActionResult CategoryPostList(string CategoryName)
+        {
+            HomeLayoutDTO layoutdto = new HomeLayoutDTO();
+            layoutdto = layoutbll.GetLayoutData();
+            ViewData["LayoutDTO"] = layoutdto;
+            return View();
+        }
+
+        public ActionResult PostDetail(int ID)
+        {
+            HomeLayoutDTO layoutdto = new HomeLayoutDTO();
+            layoutdto = layoutbll.GetLayoutData();
+            ViewData["LayoutDTO"] = layoutdto;
+            return View();
+        }
     }
 }
